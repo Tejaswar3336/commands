@@ -1,0 +1,69 @@
+####Python Pandas###
+import pandas as pd
+
+*read a csv file*
+data = pd.read_csv("filepath")
+
+*top 10 rows*
+data.head(10)
+
+*bottom 10 rows*
+data.tail(10)
+
+*structure of dataset*
+data.shape()
+
+*num. rows in dataset*
+data.shape[0]
+
+*num of columns in dataset*
+data.shape[1]
+
+*data types of columns in dataset*
+data.dtype()
+
+*column names of dataset* output is in "list type"
+data.columns.values
+
+*to get unique record from dataset columns*
+pd.unique(data.columnName)
+
+*get count of unique items in column of dataset*
+data['columnName'].nunique()
+
+*get desc of dataset*
+data.describe()
+
+*get desc of single column of dataset*
+data.columnName.describe()
+data['columnName'].describe()
+
+*get the metric of column of dataset*
+data.columnName.min()
+data.columnName.max()
+data.columnName.std()
+data.columnName.count()
+data.columnName.mean()
+
+*grouping dataset using column*
+data.groupby('columnNames')
+
+*grouping data using more one column*
+data.groupby(['col1','col2',...])
+
+*get stats of ech column in grouped by data*
+grouped_data = data.groupby(columnName)
+grouped_data.mean() #will give mean of all continous data in dataset group by columnName
+grouped_data.min()
+grouped_data.max()
+grouped_data.std()
+grouped_data.mean()
+
+*get the count of the dataset by columns*
+data.groupby('column1').['column2'].count()
+
+*get the count of the dataset by column specific category of column*
+data.groupby('column1').['column2'].count()['category of column2']
+
+*Apply mathematical operation of columns*
+e.g.: data.columnName +  value
